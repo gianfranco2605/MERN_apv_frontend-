@@ -9,6 +9,7 @@ function App() {
   return (
     <BrowserRouter>
         <Routes>
+          {/* layout */}
           <Route path="/" element={<AuthLayout />}>
               <Route index element={<Login />} />
               <Route path="registrar" element={<Registrar />} />
