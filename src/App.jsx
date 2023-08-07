@@ -5,10 +5,13 @@ import Registrar from "./pages/Registrar";
 import OlvidePassword from "./pages/OlvidePassword";
 import ConfirmarCuenta from './pages/ConfirmarCuenta';
 import NuevoPassword from "./pages/NuevoPassword";
+import { AuthProvider } from "./context/AuthProvider";
+
 const App = () => {
 
   return (
     <BrowserRouter>
+        <AuthProvider>
         <Routes>
           {/* layout */}
           <Route path="/" element={<AuthLayout />}>
@@ -20,6 +23,7 @@ const App = () => {
 
           </Route>
         </Routes>
+        </AuthProvider>
     </BrowserRouter>
   )
 }
