@@ -10,14 +10,17 @@ import NuevoPassword from "./pages/NuevoPassword";
 
 import { AuthProvider } from "./context/AuthProvider";
 import AdministrarPaciente from "./pages/AdministrarPaciente";
-
+import { PacientesProvider } from "./context/PacienteProvider";
 
 const App = () => {
 
   return (
     <BrowserRouter>
+        {/* context */}
         <AuthProvider>
-        <Routes>
+          {/* context */}
+          <PacientesProvider>
+          <Routes>
           {/* layout */}
           <Route path="/" element={<AuthLayout />}>
               <Route index element={<Login />} />
@@ -32,6 +35,7 @@ const App = () => {
               <Route index element={<AdministrarPaciente />} />
           </Route>
         </Routes>
+          </PacientesProvider>          
         </AuthProvider>
     </BrowserRouter>
   )
