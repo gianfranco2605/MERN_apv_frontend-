@@ -14,7 +14,7 @@ const Login = () => {
   
   const { msg } = alerta;
 
-  const { auth } = useAuth();
+  const { setAuth } = useAuth();
 
   const handleEmail = (e) => {
     setEmail(e.target.value)
@@ -38,8 +38,10 @@ const Login = () => {
       const { data } = await clienteAxios.post('/veterinarios/login', {email, password})
       // almacenar token
       localStorage.setItem('token', data.token);
+      setAuth(data)
       navigate('/admin')
     } catch (error) {
+      console.log(error);  // Add this line for debugging
       setAlerta({
         msg: error.response.data.msg,
         error: true
