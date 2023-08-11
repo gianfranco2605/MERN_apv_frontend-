@@ -11,6 +11,8 @@ import NuevoPassword from "./pages/NuevoPassword";
 import { AuthProvider } from "./context/AuthProvider";
 import AdministrarPaciente from "./pages/AdministrarPaciente";
 import { PacientesProvider } from "./context/PacienteProvider";
+import EditatPerfil from "./pages/EditatPerfil";
+import CambiarPassword from "./pages/CambiarPassword";
 
 const App = () => {
 
@@ -33,6 +35,8 @@ const App = () => {
 
           <Route path="/admin" element={<RutaProtegida />}>
               <Route index element={<AdministrarPaciente />} />
+              <Route path="perfil" element={<EditatPerfil />} />
+              <Route path="cambiar-password" element={<CambiarPassword />} />
           </Route>
         </Routes>
           </PacientesProvider>          
