@@ -106,6 +106,7 @@ const Registrar = () => {
                     className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
                     value={email}
                     onChange={ handleEmail}
+                    autoComplete="username"
                 />
               </div>
               <div className="my-5">
@@ -118,6 +119,7 @@ const Registrar = () => {
                   className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
                   value={password}
                   onChange={ handlePassword }
+                  autoComplete="new-password"
               />
             </div>
             <div className="my-5">
@@ -130,6 +132,7 @@ const Registrar = () => {
                   className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
                   value={repetirPassword}
                   onChange={handleRepetirPassword}
+                  autoComplete="new-password"
               />
             </div>
               {/* button */}
